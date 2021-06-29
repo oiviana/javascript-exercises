@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Lista em array - JS</title>
+</head>
+<body>
+    <div class="container">
+        <br><br>
+        <div class="Jumbotron">
+            <h1>Aqui você fará uma lista de itens</h1>
+        </div>
+        <form>
+            <br><br><br>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Preencha com um item</label>
+                <input type="text" class="form-control" id="Item">
+              </div> 
+           
+            <button type="button" value="Inserir" id="Inserir" class="btn btn-primary" style="width: 30%;"  onclick="inserir()">Inserir Item</button>
+            <button type="button" value="Remover" id="Remover" class="btn btn-primary" style="width: 30%; background-color: #c23616;"  onclick="remover()">Remover Item</button>    
+            <br><br><br><br>
+            <h2>Sua lista aqui!</h2>
+            <div id="Lista" class="alert alert-primary">
+
+            </div>
+          </form>
+
+    </div>
+    
+    <script>
+    var lista = new Array(); //instanciando o vetor
+
+    function exibir(){
+        Lista.innerHTML = '' //limpar a lista toda vez, pra não repetir os valores dela
+  
+  for(var i=0; i <lista.length; i++) {
+      Lista.innerHTML += 
+      
+     '<input type="checkbox" id="Compra'+i+'" name="scales" > '+ // dá um id para cada item
+      
+      lista[i]+'<br>'; // a div Lista vai acumulando o leitor
+  }
+
+    }
+
+
+    function inserir(){
+     var item = Item.value; //pegando o valor do input Item
+
+     lista[lista.length] = item //levando o valor para o final ou tamanho máximo da lista
+        exibir();
+     Item.value = '' //limpar caixa de texto
+    }
+
+    function remover(){
+        
+        //laço para verificar o id dos itens
+        for (var i = 0; i <lista.length; i++){
+            var compra = document.getElementById('Compra'+i)
+        //se o id estiver checado, dá um splice    
+            if(compra.checked){
+                lista.splice(i, 1)
+            }
+        }
+exibir();  
+
+    }
+    </script>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>    
+</body>
+</html>
+
+  

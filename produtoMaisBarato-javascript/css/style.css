@@ -1,0 +1,36 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+.result{
+    position: absolute;
+    background-color:#495359;
+    width: 35%;
+    height: 370px;
+    padding: 122px 50px;
+    left: 30%;
+    top: 35%;
+    z-index: 1;
+    color:white;
+    font-size: 34px;
+    text-align: justify;
+    border-radius: 8px;
+}
+
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    
+}
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+
+}
+
+form h2{
+    margin-top: 75px;
+}
+
+form button{
+    margin-left: 39%;
+}
